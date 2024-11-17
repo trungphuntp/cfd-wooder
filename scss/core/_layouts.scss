@@ -1,0 +1,50 @@
+html {
+    font-size: 62.5%;
+}
+body {
+    width: 100%;
+    max-width: var(--max-width-page);
+    margin: 0 auto;
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+    font-size: var(--fz-body);
+    line-height: var(--lh-body);
+    color: var(--grey-color);
+    letter-spacing: var(--ls-body);
+
+    @include customscroll;
+
+    &.--disable-scroll {
+        height: 100vh;
+        overflow: hidden;
+    }
+    .container {
+        width: 100%;
+        max-width: var(--max-width-container);
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: var(--pd-container);
+        padding-right: var(--pd-container);
+    }
+    .container-fluid {
+        width: 100%;
+        max-width: var(--max-width-container-fluid);
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: var(--pd-container);
+        padding-right: var(--pd-container);
+    }
+    .main {
+        section {
+            &.--padding-top {
+                padding-top: var(--section-pd);
+            }
+            &.--padding-bottom {
+                padding-bottom: var(--section-pd);
+            }
+            &.--padding-both {
+                padding: var(--section-pd) 0;
+            }
+        }
+    }
+}

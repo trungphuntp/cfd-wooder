@@ -1,0 +1,103 @@
+:root {
+    // gutter, max-width, pages
+    --gutter: 28px;
+    --pd-container: 28px;
+    --max-width-page: 2560px;
+    --max-width-container: calc(1196px + var(--pd-container) * 2);
+    --max-width-container-fluid: 1920px;
+
+    // color
+    --primary-color: #bea67c;
+    --white-color: #ffffff;
+    --black-color: #000;
+    --grey-color: #464646;
+
+    --header-color-scrolling: #000;
+
+    // font-size, line-height
+    --fz-h1: 8.4rem;
+    --lh-h1: 1.215;
+    --ls-h1: 1.008rem;
+
+    --fz-h2: 4.6rem;
+    --lh-h2: 1.218;
+    --ls-h2: 0.46rem;
+
+    --fz-h3: 1.8rem;
+    --lh-h3: 1.334;
+    --ls-h3: 0.072rem;
+
+    --fz-btn: 1.5rem;
+    --lh-btn: 1;
+    --ls-btn: 0.15rem;
+
+    --fz-body: 1.8rem;
+    --lh-body: 1.334;
+    --ls-body: 0.036rem;
+
+    --fz-small-body: 1.4rem;
+    --lh-small-body: 1.22;
+    --ls-small-body: 0.056rem;
+
+    --fz-header-menu: 1.5rem;
+    --lh-header-menu: normal;
+    --ls-header-menu: 0.15rem;
+
+    --fz-pages-slider: 3.8rem;
+    --lh-pages-slider: normal;
+    --ls-pages-slider: 0.228rem;
+
+    // font family
+    --font-body: pr;
+    --font-body-bold: pb;
+    --font-body-extra: pe;
+
+    // timing transition
+    --time-duration: 0.3s;
+    --timing-duration: cubic-bezier(0.24, -0.13, 0.63, 0.94);
+
+    // common variable
+    --header-height: 90px;
+    --header-height-scroll: 70px;
+    --footer-height: 100px;
+    --section-pd: 120px;
+
+    // responsive
+    @include sm {
+        --max-width-container: 960px;
+        --section-pd: 90px;
+        --header-height: 70px;
+    }
+    @include xs {
+        --max-width-container: 100%;
+        --section-pd: 60px;
+        --gutter: 10px;
+        --pd-container: 15px;
+        --header-height: 56px;
+        --header-height-scroll: 56px;
+
+        --fz-h1: 5.6rem;
+        --lh-h1: 1.215;
+        --ls-h1: 0.448rem;
+
+        --fz-h2: 3.8rem;
+        --lh-h2: 1.111;
+        --ls-h2: 0.152rem;
+
+        --fz-h3: 1.6rem;
+        --lh-h3: 1.375;
+        --ls-h3: 0.072rem;
+
+        --fz-btn: 1.2rem;
+        --lh-btn: 1;
+        --ls-btn: 0.15rem;
+
+        --fz-body: 1.5rem;
+        --lh-body: 1.334;
+        --ls-body: 0.036rem;
+
+        --fz-small-body: 1.2rem;
+        --lh-small-body: 1.25;
+        --ls-small-body: 0.056rem;
+    }
+}

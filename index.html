@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Wooder</title>
+
+        <meta name="title" content="Wooder" />
+        <meta
+            name="description"
+            content="Wooder utilizes materials otherwise left behind, rendered useless in their original intent. By creating new pieces made o.rerclaimed barnwood"
+        />
+        <meta name="keywords" content="" />
+        <link rel="author" href="Phú Nguyễn" />
+        <link rel="canonical" href="https://cfdcircle.vn/" />
+
+        <!-- Facebook meta -->
+        <meta property="og:url" content="https://cfdcircle.vn/" />
+        <meta property="og:image" content="" />
+        <meta property="og:description" content="Wooder" />
+        <meta property="og:title" content="Wooder" />
+        <meta property="og:site_name" content="Wooder" />
+        <meta property="og:see_also" content="" />
+
+        <!-- favicon -->
+        <link rel="icon" href="./favicon.ico" />
+
+        <!-- font -->
+        <link rel="stylesheet" href="./dest/fonts.css" />
+
+        <!-- loading style -->
+        <style>
+            :root {
+                --bg-loading: #000;
+                --bg-loading-inner: #fff;
+                --bg-loading-progess: #bea67c;
+
+                --fz-percent: 1.5rem;
+                --lh-percent: 1;
+                --ls-percent: 0.15rem;
+                --color-percent: #fff;
+
+                --time-loading: 0.3s;
+                --timing-loading: cubic-bezier(0.24, -0.13, 0.63, 0.94);
+            }
+
+            .loading {
+                position: fixed;
+                z-index: 999;
+                inset: 0;
+                background: var(--bg-loading);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 16px;
+                opacity: 1;
+                visibility: visible;
+            }
+            .loading.--loaded {
+                transition: opacity var(--time-loading), visibility var(--time-loading);
+                transition-timing-function: var(--timing-loading);
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .loading .loading__inner {
+                width: 160px;
+                height: 4px;
+                overflow: hidden;
+                background: var(--bg-loading-inner);
+            }
+            .loading .loading__inner .loading__inner-progress {
+                width: 0%;
+                height: 100%;
+                background: var(--bg-loading-progess);
+            }
+
+            .loading .loading__percent {
+                color: var(--color-percent);
+                font-family: pb;
+                font-size: var(--fz-percent);
+                line-height: var(--lh-percent);
+                letter-spacing: var(--ls-percent);
+                text-transform: uppercase;
+            }
+
+            /* sm */
+            @media screen and (max-width: 991.98px) {
+                .loading {
+                    gap: 14px;
+                }
+                .loading .loading__inner {
+                    width: 145px;
+                }
+            }
+
+            /* xxs */
+            @media screen and (max-width: 575.98px) {
+                :root {
+                    --fz-percent: 1.2rem;
+                    --lh-percent: 1;
+                    --ls-percent: 0.12rem;
+                }
+                .loading {
+                    gap: 12px;
+                }
+                .loading .loading__inner {
+                    width: 129px;
+                }
+            }
+        </style>
+
+        <!-- style css-->
+        <link rel="stylesheet" href="./dest/style.min.css" />
+    </head>
+    <body class="homepage">
+        <div class="progressbar"></div>
+        <header class="header">
+            <div class="container-fluid">
+                <a href="./" class="header__logo"><img src="./img/wooder.svg" alt="wooder" /></a>
+                <ul class="headermenu">
+                    <li>
+                        <a class="--active" href="#home">home</a>
+                    </li>
+                    <li>
+                        <a href="#products">products</a>
+                    </li>
+                    <li>
+                        <a href="#video">video</a>
+                    </li>
+                    <li>
+                        <a href="#services">services</a>
+                    </li>
+                    <li>
+                        <a href="#about">about</a>
+                    </li>
+                    <li>
+                        <a href="#gallery">gallery</a>
+                    </li>
+                    <li>
+                        <a href="#news">news</a>
+                    </li>
+                    <li>
+                        <a href="#faq">FAQs</a>
+                    </li>
+                </ul>
+                <div class="header__cta">
+                    <div class="header__cta-lang">
+                        <div class="current">
+                            <span class="text">EN</span>
+                            <img src="./img/i-drop-down.svg" alt="wooder" />
+                        </div>
+                        <div class="select">
+                            <div class="select__wrapper">
+                                <span class="text">VI</span>
+                                <span class="text">JP</span>
+                                <span class="text">AU</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="header__cta-btn btn">sign up</button>
+                    <button class="hamburgermenu">
+                        <div class="menu"></div>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- menu mobile -->
+        <div class="menumobile">
+            <nav class="menumobile__nav">
+                <ul class="headermenu">
+                    <li><a class="--active" href="#home"> home </a></li>
+                    <li><a href="#products"> products </a></li>
+                    <li><a href="#video"> video </a></li>
+                    <li><a href="#services"> services </a></li>
+                    <li><a href="#about"> about </a></li>
+                    <li><a href="#gallery"> gallery </a></li>
+                    <li><a href="#news"> news </a></li>
+                    <li><a href="#faq"> FAQs </a></li>
+                </ul>
+                <button class="menumobile__btn btn">sign up</button>
+            </nav>
+        </div>
+        <!-- sign up  -->
+        <div class="signup">
+            <h2 class="heading --h2">create acount</h2>
+            <div class="signup__row">
+                <a href="https://cfdcircle.vn/" target="_blank" class="btn --google">
+                    <img src="./img/icongoogle.svg" alt="google" />
+                    google</a
+                >
+                <a
+                    href="https://www.facebook.com/trungphuntp/"
+                    target="_blank"
+                    class="btn --facebook"
+                >
+                    <img src="./img/iconfacebook.svg" alt="facebook" />
+                    facebook
+                </a>
+            </div>
+            <div class="signup__desc">
+                <span class="signup__desc-text">Or register using</span>
+            </div>
+            <form action="post" class="signup__form">
+                <!-- Fullname -->
+                <div class="signup__form-group">
+                    <input id="fullname" type="text" placeholder="Fullname" />
+                    <span class="message"> </span>
+                </div>
+
+                <!-- Email address  -->
+                <div class="signup__form-group">
+                    <input type="text" placeholder="Email address" id="email" />
+                    <span class="message"> </span>
+                </div>
+                <!-- Username -->
+                <div class="signup__form-group">
+                    <input type="text" placeholder="Username" id="username" />
+                    <span class="message"> </span>
+                </div>
+                <!-- Password -->
+                <div class="signup__form-group">
+                    <input type="password" placeholder="Password" id="password" />
+                    <div class="eyes">
+                        <img src="./img/i-eye.svg" class="eyes__show" alt="" />
+                        <img src="./img/i-noneeye.svg" class="eyes__hide" alt="" />
+                    </div>
+                    <span class="message"> </span>
+                </div>
+                <!-- Confirm Password -->
+                <div class="signup__form-group">
+                    <input type="password" placeholder="Confirm Password" id="passwordcf" />
+                    <div class="eyes">
+                        <img src="./img/i-eye.svg" class="eyes__show" alt="" />
+                        <img src="./img/i-noneeye.svg" class="eyes__hide" alt="" />
+                    </div>
+                    <span class="message"> </span>
+                </div>
+                <div class="signup__form-check">
+                    <label class="label">
+                        <input class="checkbox" type="checkbox" />
+                        <div class="aroundcheck"></div>
+                        <span>Send me special offers, information and recommendations</span>
+                    </label>
+                    <span class="message"></span>
+                </div>
+
+                <button type="submit" class="btn">sign up</button>
+            </form>
+            <button class="signup__close"></button>
+        </div>
+        <!-- opacity -->
+        <div class="opactityblack"></div>
+
+        <!-- popup video -->
+        <div class="popupvideo">
+            <div class="popupvideo__inner">
+                <div class="popupvideo__inner-iframe">
+                    <iframe
+                        class="videoframe"
+                        width="100%"
+                        height="100%"
+                        src=""
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
+                    <div class="close">
+                        <img src="./img/close.svg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading">
+            <div class="loading__inner">
+                <div class="loading__inner-progress"></div>
+            </div>
+            <div class="loading__percent">0%</div>
+        </div>
+
+        <main class="main">
+            <!-- section hero -->
+            <section id="home" class="schero">
+                <div class="schero__slider">
+                    <div class="schero__slider-item">
+                        <div class="content">
+                            <h2 class="heading">Wooder</h2>
+                            <button class="btn --outline">
+                                learn more
+                                <img src="./img/i-arrow-slider.svg" alt="wooder" />
+                            </button>
+                        </div>
+                        <picture class="banner">
+                            <source media="(max-width:767px)" srcset="./img/slider-1-m.jpg" />
+                            <img src="./img/slider-1.jpg" alt="wooder" />
+                        </picture>
+                    </div>
+                    <div class="schero__slider-item">
+                        <div class="content">
+                            <h2 class="heading">Decor</h2>
+                            <button class="btn --outline">
+                                learn more
+                                <img class="banner" src="./img/i-arrow-slider.svg" alt="wooder" />
+                            </button>
+                        </div>
+                        <picture class="banner">
+                            <source media="(max-width:767px)" srcset="./img/slider-2-m.jpg" />
+                            <img src="./img/slider-2.jpg" alt="wooder"
+                        /></picture>
+                    </div>
+                    <div class="schero__slider-item">
+                        <div class="content">
+                            <h2 class="heading">Furniture</h2>
+                            <button class="btn --outline">
+                                learn more
+                                <img src="./img/i-arrow-slider.svg" alt="wooder" />
+                            </button>
+                        </div>
+                        <picture class="banner">
+                            <source media="(max-width:767px)" srcset="./img/slider-3-m.jpg" />
+                            <img src="./img/slider-3.jpg" />
+                        </picture>
+                    </div>
+                </div>
+
+                <div class="schero__bottom">
+                    <div class="container-fluid">
+                        <div class="schero__bottom-left">
+                            <div class="pages">
+                                <span class="pages__current">01</span>
+                                <span class="pages__line">/</span>
+                                <span class="pages__total">03</span>
+                            </div>
+                        </div>
+                        <div class="schero__bottom-scroll">
+                            <img class="mouse" src="./img/i-mouse-scroll-down.svg" alt="wooder" />
+                            <img class="arrow" src="./img/i-arrow-scroll-down.svg" alt="wooder" />
+                        </div>
+                        <div class="schero__bottom-right">
+                            <button class="btn --outline --pre">
+                                <img src="./img/i-arrow-btn.svg" alt="wooder" />
+                            </button>
+                            <button class="btn --outline --next">
+                                <img src="./img/i-arrow-btn.svg" alt="wooder" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section product -->
+            <section id="products" class="scproduct --padding-top">
+                <div class="container">
+                    <!-- furniture item -->
+                    <div class="showcontent">
+                        <div class="showcontent__left">
+                            <div class="textbox">
+                                <h2 class="heading --h2">Furniture</h2>
+                                <p class="desc">
+                                    Wooder utilizes materials otherwise left behind, rendered
+                                    useless in their original intent. By creating new pieces made
+                                    o.rerclaimed barnwood
+                                </p>
+                                <a href="#" class="link">
+                                    learn more
+                                    <img src="./img/i-arrow-brown.svg" alt="wooder" />
+                                </a>
+                            </div>
+                        </div>
+                        <figure class="showcontent__img">
+                            <img src="./img/furniture-img.jpg" alt="wooder" />
+                        </figure>
+                    </div>
+
+                    <!-- decor item -->
+                    <div class="showcontent --right">
+                        <div class="showcontent__left">
+                            <div class="textbox">
+                                <h2 class="heading --h2">decor</h2>
+                                <p class="desc">
+                                    We make all types of wooden decor as per design given by
+                                    Architect,Interior designer, contractor which is suitable your
+                                    premises.
+                                </p>
+                                <a href="#" class="link">
+                                    learn more
+                                    <img src="./img/i-arrow-brown.svg" alt="wooder" />
+                                </a>
+                            </div>
+                        </div>
+                        <figure class="showcontent__img">
+                            <img src="./img/deco-img.jpg" alt="wooder" />
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section quality -->
+            <section id="video" class="scquality --padding-both">
+                <div class="container">
+                    <div class="textbox --aligncenter">
+                        <h2 class="heading --h2">wooder – is quality</h2>
+                        <p class="desc">
+                            We create unique design objects made of rare wood, specially under the
+                            order. Look at the short video about our work.
+                        </p>
+                    </div>
+                    <div class="scquality__content">
+                        <!-- item quality 1 -->
+
+                        <div class="circlevideo">
+                            <div
+                                class="circlevideo__video"
+                                data-btn-video
+                                data-src-video="W6UI_cEqYy0?si=qv8oJIp7ldpnxD_P"
+                            >
+                                <figure class="circlevideo__video-icon">
+                                    <img src="./img/i-play.svg" alt="wooder" />
+                                </figure>
+                                <div class="circlevideo__video-thumb">
+                                    <img src="./img/quallity-img-1.jpg" alt="wooder" />
+                                </div>
+                            </div>
+                            <h3 class="heading --h3">Innovative Design</h3>
+                        </div>
+
+                        <!-- item quality 2 -->
+                        <div class="circlevideo">
+                            <div
+                                class="circlevideo__video"
+                                data-btn-video
+                                data-src-video="F037vSugvGo?si=ddVk84KdCfBtOxGJ"
+                            >
+                                <figure class="circlevideo__video-icon">
+                                    <img src="./img/i-play.svg" alt="wooder" />
+                                </figure>
+                                <div class="circlevideo__video-thumb">
+                                    <img src="./img/quallity-img-2.jpg" alt="wooder" />
+                                </div>
+                            </div>
+                            <h3 class="heading --h3">High-level Skills</h3>
+                        </div>
+
+                        <!-- item quality 3 -->
+                        <div class="circlevideo">
+                            <div
+                                class="circlevideo__video"
+                                data-btn-video
+                                data-src-video="k-ndQHjftnI?si=ZMWCif7gW8bjJRMR"
+                            >
+                                <figure class="circlevideo__video-icon">
+                                    <img src="./img/i-play.svg" alt="wooder" />
+                                </figure>
+                                <div class="circlevideo__video-thumb">
+                                    <img src="./img/quallity-img-3.jpg" alt="wooder" />
+                                </div>
+                            </div>
+                            <h3 class="heading --h3">Quality Products</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section banner -->
+            <section
+                id="services"
+                class="scbanner"
+                style="background-image: url(./img/bg-video.jpg)"
+            >
+                <div class="container">
+                    <div class="textbox">
+                        <h2 class="heading --h2 --yellow --noline">
+                            we Do the design<br />of any complexity
+                        </h2>
+                        <p class="desc --white">
+                            Wooder utilizes materials otherwise left behind, rendered useless in
+                            their original intent. By creating new pieces made o.rerclaimed barnwood
+                        </p>
+                        <button
+                            class="play btn --outline"
+                            data-btn-video
+                            data-src-video="ixNLxzcfnbk?si=pDz1j1GddTzMjUl3"
+                        >
+                            <img src="./img/i-play-circle.svg" alt="wooder" />
+                            <span class="play__text"> WATCH VIDEO </span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section about -->
+            <section id="about" class="scabout --padding-both">
+                <div class="container">
+                    <div class="showcontent --right">
+                        <div class="showcontent__left">
+                            <div class="textbox">
+                                <h2 class="heading --h2">about us</h2>
+                                <p class="desc">
+                                    We are a team of professionals in the wood processing and the
+                                    creation of wooden lorem.of the highest class.
+                                </p>
+                                <a href="#" class="link"
+                                    >learn more
+                                    <img src="./img/i-arrow-brown.svg" alt="wooder" />
+                                </a>
+                            </div>
+                        </div>
+                        <figure class="showcontent__img">
+                            <img src="./img/about-us-img.jpg" alt="wooder" />
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <!-- section gallery -->
+            <section id="gallery" class="scgallery --padding-both">
+                <div class="container">
+                    <div class="textbox">
+                        <h2 class="heading --h2 --white --noline">gallery</h2>
+                        <p class="desc --white">
+                            We are a team of professionals in the wood processing and the creation
+                            of wooden furniture of the highest class
+                        </p>
+                    </div>
+                    <div class="scgallery__list">
+                        <figure class="scgallery__list-item">
+                            <a
+                                href="./img/gallery-1-l.jpg"
+                                data-fancybox="images"
+                                data-caption="Gallery 1"
+                            >
+                                <img src="./img/gallery-1.jpg" alt="wooder" />
+                            </a>
+                        </figure>
+                        <figure class="scgallery__list-item">
+                            <a
+                                href="./img/gallery-2-l.jpg"
+                                data-fancybox="images"
+                                data-caption="Gallery 2"
+                            >
+                                <img src="./img/gallery-2.jpg" alt="wooder" />
+                            </a>
+                        </figure>
+                        <figure class="scgallery__list-item">
+                            <a
+                                href="./img/gallery-3-l.jpg"
+                                data-fancybox="images"
+                                data-caption="Gallery 3"
+                            >
+                                <img src="./img/gallery-3.jpg" alt="wooder" />
+                            </a>
+                        </figure>
+                        <figure class="scgallery__list-item">
+                            <a
+                                href="./img/gallery-4-l.jpg"
+                                data-fancybox="images"
+                                data-caption="Gallery 4"
+                            >
+                                <img src="./img/gallery-4.jpg" alt="wooder" />
+                            </a>
+                        </figure>
+                        <figure class="scgallery__list-item">
+                            <a
+                                href="./img/gallery-5-l.jpg"
+                                data-fancybox="images"
+                                data-caption="Gallery 5"
+                            >
+                                <img src="./img/gallery-5.jpg" alt="wooder" />
+                            </a>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+            <!-- section news -->
+            <section id="news" class="scnews --padding-top">
+                <div class="container">
+                    <div class="textbox">
+                        <h2 class="heading --h2 --noline">NEWS</h2>
+                        <p class="desc">
+                            We are a team of professionals in the wood processing and the creation
+                            of wooden furniture of the highest class
+                        </p>
+                    </div>
+                    <div class="post">
+                        <div class="post__tabs">
+                            <div class="post__tabs-inner">
+                                <button class="tab --active" data-tab="1">All</button>
+                                <button class="tab" data-tab="2">technology</button>
+                                <button class="tab" data-tab="3">fashion</button>
+                            </div>
+                        </div>
+                        <div class="post__listwrapper">
+                            <!-- post list 1 -->
+                            <div data-tab="1" class="post__list --active">
+                                <article class="post__list-item">
+                                    <figure class="img">
+                                        <a href="#">
+                                            <img src="./img/news-img-1.jpg" alt="wooder" />
+                                        </a>
+                                    </figure>
+
+                                    <h3 class="heading --h3">
+                                        <a href="#"> Where does it come from? </a>
+                                    </h3>
+                                    <p class="desc">
+                                        Contrary to popular belief, Lorem Ipsum is not simply random
+                                        text. It has roots in a piece of classical Latin literatur
+                                        roots in a piece of Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Quos quibusdam, dignissimos iste labore
+                                        iusto veritatis. Officiis vel et voluptatibus, quasi quos
+                                        tempore! Doloremque rem veniam tempora esse eligendi numquam
+                                        officiis.
+                                    </p>
+                                </article>
+                                <article class="post__list-item">
+                                    <figure class="img">
+                                        <a href="#">
+                                            <img src="./img/news-img-2.jpg" alt="wooder" />
+                                        </a>
+                                    </figure>
+                                    <h3 class="heading --h3">
+                                        <a href="#"> There are many variations of passages</a>
+                                    </h3>
+                                    <p class="desc">
+                                        Contrary to popular belief, Lorem Ipsum is not simply random
+                                        text. It has roots in a piece of classical Latin literatur
+                                        roots in a piece of Lorem ipsum dolor sit, amet consectetur
+                                        adipisicing elit. Earum est vel, dignissimos nisi fugiat
+                                        quod, optio fugit sed harum tempore pariatur voluptate
+                                        inventore quam doloremque temporibus id voluptatibus natus
+                                        itaque?
+                                    </p>
+                                </article>
+                                <article class="post__list-item">
+                                    <figure class="img">
+                                        <a href="#">
+                                            <img src="./img/news-img-3.jpg" alt="wooder" />
+                                        </a>
+                                    </figure>
+                                    <h3 class="heading --h3">
+                                        <a href="#">
+                                            It is a long established fact that a reader It has roots
+                                            in a piece of Lorem ipsum, dolor sit amet consectetur
+                                            adipisicing elit. Excepturi odio quae placeat sed
+                                            exercitationem doloremque dicta aliquam! Aliquid eos
+                                            labore quam. Maiores, quod debitis. Totam cum animi ad
+                                            doloremque consectetur!
+                                        </a>
+                                    </h3>
+                                    <p class="desc">
+                                        Contrary to popular belief, Lorem Ipsum is not simply random
+                                        text. It has roots in a piece of classical Latin literatur
+                                        roots in a piece of Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Expedita, ducimus cupiditate, dicta
+                                        laudantium facilis veniam ut perspiciatis praesentium
+                                        repudiandae deserunt ullam veritatis, harum odio dolorum
+                                        voluptas aliquid at excepturi corporis.
+                                    </p>
+                                </article>
+                            </div>
+                            <!-- post list 2 -->
+                            <div data-tab="2" class="post__list">
+                                <article class="post__list-item">
+                                    <figure class="img">
+                                        <a href="#">
+                                            <img src="./img/news-img-4.jpg" alt="wooder" />
+                                        </a>
+                                    </figure>
+
+                                    <h3 class="heading --h3">
+                                        <a href="#"> Where does it come from? </a>
+                                    </h3>
+                                    <p class="desc">
+                                        Contrary to popular belief, Lorem Ipsum is not simply random
+                                        text. It has roots in a piece of classical Latin literatur
+                                        roots in a piece of Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Quos quibusdam, dignissimos iste labore
+                                        iusto veritatis. Officiis vel et voluptatibus, quasi quos
+                                        tempore! Doloremque rem veniam tempora esse eligendi numquam
+                                        officiis.
+                                    </p>
+                                </article>
+                                <article class="post__list-item">
+                                    <figure class="img">
+                                        <a href="#">
+                                            <img src="./img/news-img-5.jpg" alt="wooder" />
+                                        </a>
+                                    </figure>
+                                    <h3 class="heading --h3">
+                                        <a href="#"> There are many variations of passages</a>
+                                    </h3>
+                                    <p class="desc">
+                                        Contrary to popular belief, Lorem Ipsum is not simply random
+                                        text. It has roots in a piece of classical Latin literatur
+                                        roots in a piece of Lorem ipsum dolor sit, amet consectetur
+                                        adipisicing elit. Earum est vel, dignissimos nisi fugiat
+                                        quod, optio fugit sed harum tempore pariatur voluptate
+                                        inventore quam doloremque temporibus id voluptatibus natus
+                                        itaque?
+                                    </p>
+                                </article>
+                                <article class="post__list-item">
+                                    <figure class="img">
+                                        <a href="#">
+                                            <img src="./img/news-img-6.jpg" alt="wooder" />
+                                        </a>
+                                    </figure>
+                                    <h3 class="heading --h3">
+                                        <a href="#">
+                                            It is a long established fact that a reader It has roots
+                                            in a piece of Lorem ipsum, dolor sit amet consectetur
+                                            adipisicing elit. Excepturi odio quae placeat sed
+                                            exercitationem doloremque dicta aliquam! Aliquid eos
+                                            labore quam. Maiores, quod debitis. Totam cum animi ad
+                                            doloremque consectetur!
+                                        </a>
+                                    </h3>
+                                    <p class="desc">
+                                        Contrary to popular belief, Lorem Ipsum is not simply random
+                                        text. It has roots in a piece of classical Latin literatur
+                                        roots in a piece of Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Expedita, ducimus cupiditate, dicta
+                                        laudantium facilis veniam ut perspiciatis praesentium
+                                        repudiandae deserunt ullam veritatis, harum odio dolorum
+                                        voluptas aliquid at excepturi corporis.
+                                    </p>
+                                </article>
+                            </div>
+                            <!-- post list 3 -->
+                            <div data-tab="3" class="post__list">
+                                <article class="post__list-item">
+                                    <figure class="img">
+                                        <a href="#">
+                                            <img src="./img/news-img-7.jpg" alt="wooder" />
+                                        </a>
+                                    </figure>
+
+                                    <h3 class="heading --h3">
+                                        <a href="#"> Where does it come from? </a>
+                                    </h3>
+                                    <p class="desc">
+                                        Contrary to popular belief, Lorem Ipsum is not simply random
+                                        text. It has roots in a piece of classical Latin literatur
+                                        roots in a piece of Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Quos quibusdam, dignissimos iste labore
+                                        iusto veritatis. Officiis vel et voluptatibus, quasi quos
+                                        tempore! Doloremque rem veniam tempora esse eligendi numquam
+                                        officiis.
+                                    </p>
+                                </article>
+                                <article class="post__list-item">
+                                    <figure class="img">
+                                        <a href="#">
+                                            <img src="./img/news-img-8.jpg" alt="wooder" />
+                                        </a>
+                                    </figure>
+                                    <h3 class="heading --h3">
+                                        <a href="#"> There are many variations of passages</a>
+                                    </h3>
+                                    <p class="desc">
+                                        Contrary to popular belief, Lorem Ipsum is not simply random
+                                        text. It has roots in a piece of classical Latin literatur
+                                        roots in a piece of Lorem ipsum dolor sit, amet consectetur
+                                        adipisicing elit. Earum est vel, dignissimos nisi fugiat
+                                        quod, optio fugit sed harum tempore pariatur voluptate
+                                        inventore quam doloremque temporibus id voluptatibus natus
+                                        itaque?
+                                    </p>
+                                </article>
+                                <article class="post__list-item">
+                                    <figure class="img">
+                                        <a href="#">
+                                            <img src="./img/news-img-9.jpg" alt="wooder" />
+                                        </a>
+                                    </figure>
+                                    <h3 class="heading --h3">
+                                        <a href="#">
+                                            It is a long established fact that a reader It has roots
+                                            in a piece of Lorem ipsum, dolor sit amet consectetur
+                                            adipisicing elit. Excepturi odio quae placeat sed
+                                            exercitationem doloremque dicta aliquam! Aliquid eos
+                                            labore quam. Maiores, quod debitis. Totam cum animi ad
+                                            doloremque consectetur!
+                                        </a>
+                                    </h3>
+                                    <p class="desc">
+                                        Contrary to popular belief, Lorem Ipsum is not simply random
+                                        text. It has roots in a piece of classical Latin literatur
+                                        roots in a piece of Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Expedita, ducimus cupiditate, dicta
+                                        laudantium facilis veniam ut perspiciatis praesentium
+                                        repudiandae deserunt ullam veritatis, harum odio dolorum
+                                        voluptas aliquid at excepturi corporis.
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section question -->
+            <section id="faq" class="scquestion --padding-top">
+                <div class="container">
+                    <div class="textbox">
+                        <h2 class="heading --h2 --noline">Frequently Asked Questions</h2>
+                    </div>
+                    <div class="accordion">
+                        <!-- accordion__item 1 -->
+                        <div class="accordion__item">
+                            <div class="accordion__item-head">
+                                <h3 class="heading --h3">
+                                    It is a long established fact that a reader It has roots in a
+                                    piece of?
+                                </h3>
+                                <img src="./img/i-chevron.svg" alt="wooder" />
+                            </div>
+                            <div class="accordion__item-body">
+                                <p class="text">
+                                    Contrary to popular belief, Lorem Ipsum is not simply random
+                                    text. It has roots in a piece of classical Latin literatur Lorem
+                                    Ipsum is not. Specialists in metal packaging and
+                                    aerosols, LEREM laboratory engineers carry out certified
+                                    appraisals, tests and approvals.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- accordion__item 2 -->
+                        <div class="accordion__item">
+                            <div class="accordion__item-head">
+                                <h3 class="heading --h3">organization which is authorized?</h3>
+                                <img src="./img/i-chevron.svg" alt="wooder" />
+                            </div>
+                            <div class="accordion__item-body">
+                                <p class="text">
+                                    Contrary to popular belief, Lorem Ipsum is not simply random
+                                    text. It has roots in a piece of classical Latin literatur Lorem
+                                    Ipsum is not. Specialists in metal packaging and
+                                    aerosols, LEREM laboratory engineers carry out certified
+                                    appraisals, tests and approvals. Lorem, ipsum dolor sit amet
+                                    consectetur adipisicing elit. Laudantium deserunt recusandae
+                                    voluptate facilis suscipit quod labore tempore sed quam nobis
+                                    vero cupiditate nostrum ducimus tenetur voluptatum consequuntur,
+                                    facere asperiores aspernatur.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- accordion__item 3 -->
+                        <div class="accordion__item">
+                            <div class="accordion__item-head">
+                                <h3 class="heading --h3">
+                                    Lerem and others you may know. Facebook gives people the power
+                                    to share and makes the world?
+                                </h3>
+                                <img src="./img/i-chevron.svg" alt="wooder" />
+                            </div>
+                            <div class="accordion__item-body">
+                                <p class="text">
+                                    Contrary to popular belief, Lorem Ipsum is not simply random
+                                    text. It has roots in a piece of classical Latin literatur Lorem
+                                    Ipsum is not. Specialists in metal packaging and
+                                    aerosols, LEREM laboratory engineers carry out certified
+                                    appraisals, tests and approvals. Lorem ipsum dolor sit amet
+                                    consectetur adipisicing elit. Consequuntur aspernatur tempora
+                                    sint assumenda iure, aperiam illum nulla quam aliquam ratione
+                                    eos aliquid ex laboriosam possimus praesentium, reprehenderit
+                                    exercitationem pariatur earum! Voluptatum omnis, delectus
+                                    quisquam quidem nobis blanditiis unde alias ipsam fuga, esse
+                                    porro inventore mollitia quam. Vero vel veritatis praesentium
+                                    alias iste accusantium corrupti voluptatibus error, voluptas
+                                    reiciendis. Ut eveniet libero reprehenderit repellat est
+                                    voluptate ea officiis placeat odio, soluta possimus, laboriosam
+                                    quaerat provident cum. Dolor possimus qui similique? Fugiat
+                                    soluta voluptas asperiores? Qui mollitia a quo excepturi
+                                    quibusdam repellendus, amet molestias ut delectus corporis vero
+                                    in illo ad aspernatur!
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- accordion__item 4 -->
+                        <div class="accordion__item">
+                            <div class="accordion__item-head">
+                                <h3 class="heading --h3">
+                                    Listen to music by LeRem on Apple Music?
+                                </h3>
+                                <img src="./img/i-chevron.svg" alt="wooder" />
+                            </div>
+                            <div class="accordion__item-body">
+                                <p class="text">
+                                    Contrary to popular belief, Lorem Ipsum is not simply random
+                                    text. It has roots in a piece of classical Latin literatur Lorem
+                                    Ipsum is not. Specialists in metal packaging and
+                                    aerosols, LEREM laboratory engineers carry out certified
+                                    appraisals, tests and approvals.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- accordion__item 5 -->
+                        <div class="accordion__item">
+                            <div class="accordion__item-head">
+                                <h3 class="heading --h3">
+                                    Reminder: If you encounter any issues with Enscape (including
+                                    installation problems) or your subscription please reach out?
+                                </h3>
+                                <img src="./img/i-chevron.svg" alt="wooder" />
+                            </div>
+                            <div class="accordion__item-body">
+                                <p class="text">
+                                    Contrary to popular belief, Lorem Ipsum is not simply random
+                                    text. It has roots in a piece of classical Latin literatur Lorem
+                                    Ipsum is not. Specialists in metal packaging and
+                                    aerosols, LEREM laboratory engineers carry out certified
+                                    appraisals, tests and approvals.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- accordion__item 6 -->
+                        <div class="accordion__item">
+                            <div class="accordion__item-head">
+                                <h3 class="heading --h3">
+                                    surnames evolved as a way to sort people into groups?
+                                </h3>
+                                <img src="./img/i-chevron.svg" alt="wooder" />
+                            </div>
+                            <div class="accordion__item-body">
+                                <p class="text">
+                                    Contrary to popular belief, Lorem Ipsum is not simply random
+                                    text. It has roots in a piece of classical Latin literatur Lorem
+                                    Ipsum is not. Specialists in metal packaging and
+                                    aerosols, LEREM laboratory engineers carry out certified
+                                    appraisals, tests and approvals.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- accordion__item 7 -->
+                        <div class="accordion__item">
+                            <div class="accordion__item-head">
+                                <h3 class="heading --h3">
+                                    team had the pleasure of attending the Paris Packaging Week and
+                                    meeting?
+                                </h3>
+                                <img src="./img/i-chevron.svg" alt="wooder" />
+                            </div>
+                            <div class="accordion__item-body">
+                                <p class="text">
+                                    Contrary to popular belief, Lorem Ipsum is not simply random
+                                    text. It has roots in a piece of classical Latin literatur Lorem
+                                    Ipsum is not. Specialists in metal packaging and
+                                    aerosols, LEREM laboratory engineers carry out certified
+                                    appraisals, tests and approvals.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section carousel -->
+            <section class="sccarousel --padding-both">
+                <div class="sccarousel__list">
+                    <img
+                        class="sccarousel__list-item"
+                        data-flickity-lazyload-src="./img/carousel-img-1.jpg"
+                        alt="wooder"
+                    />
+
+                    <img
+                        class="sccarousel__list-item"
+                        data-flickity-lazyload-src="./img/carousel-img-2.jpg"
+                        alt="wooder"
+                    />
+
+                    <img
+                        class="sccarousel__list-item"
+                        data-flickity-lazyload-src="./img/carousel-img-3.jpg"
+                        alt="wooder"
+                    />
+
+                    <img
+                        class="sccarousel__list-item"
+                        data-flickity-lazyload-src="./img/carousel-img-4.jpg"
+                        alt="wooder"
+                    />
+                    <img
+                        class="sccarousel__list-item"
+                        data-flickity-lazyload-src="./img/carousel-img-5.jpg"
+                        alt="wooder"
+                    />
+
+                    <img
+                        class="sccarousel__list-item"
+                        data-flickity-lazyload-src="./img/carousel-img-6.jpg"
+                        alt="wooder"
+                    />
+
+                    <img
+                        class="sccarousel__list-item"
+                        data-flickity-lazyload-src="./img/carousel-img-7.jpg"
+                        alt="wooder"
+                    />
+
+                    <img
+                        class="sccarousel__list-item"
+                        data-flickity-lazyload-src="./img/carousel-img-8.jpg"
+                        alt="wooder"
+                    />
+                    <img
+                        class="sccarousel__list-item"
+                        data-flickity-lazyload-src="./img/carousel-img-9.jpg"
+                        alt="wooder"
+                    />
+                    <img
+                        class="sccarousel__list-item"
+                        data-flickity-lazyload-src="./img/carousel-img-10.jpg"
+                        alt="wooder"
+                    />
+                </div>
+                <div class="sccarousel__scroll">
+                    <div class="sccarousel__scroll-bar"></div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <p class="footer__copy">© 2024 WOODER, CFD Circle</p>
+                <a class="footer__logo" href="./"> <img src="./img/wooder.svg" alt="wooder" /></a>
+                <div class="footer__gotop">
+                    <img src="./img/i-arrow-go-top.svg" alt="wooder" />
+                </div>
+            </div>
+        </footer>
+        <script src="./dest/jsmain.min.js"></script>
+
+        <!-- file viết để dưới -->
+        <script src="./dest/main.js"></script>
+    </body>
+</html>

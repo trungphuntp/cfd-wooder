@@ -1,0 +1,289 @@
+.headermenu {
+    a {
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        font-family: pb;
+        padding: 0 15px;
+        color: var(--white-color);
+        font-size: var(--fz-header-menu);
+        line-height: var(--lh-header-menu);
+        letter-spacing: var(--ls-header-lang);
+        text-transform: uppercase;
+        &.--active {
+            color: var(--primary-color);
+        }
+        &:hover {
+            color: var(--primary-color);
+            @include transition("color var(--time-duration)");
+            transition-timing-function: var(--timing-duration);
+        }
+    }
+}
+.header {
+    height: var(--header-height);
+    max-width: var(--max-width-page);
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    top: 0;
+    z-index: 900;
+    width: 100%;
+
+    @include transition(
+        " background var(--time-duration),  height var(--time-duration)"
+    );
+    transition-timing-function: var(--timing-duration);
+    background: linear-gradient(var(--black-color) 10%, transparent);
+
+    &.--scroll {
+        background: var(--black-color);
+        height: var(--header-height-scroll);
+    }
+
+    .container-fluid {
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &.--right {
+            justify-content: flex-end;
+        }
+    }
+    &__logo {
+        @include hiddenItem(false);
+        @include transition(
+            "  opacity var(--time-duration),
+        visibility var(--time-duration)"
+        );
+    }
+    & .headermenu {
+        position: absolute;
+        left: 50%;
+        @include transform("translateX(-50%)");
+
+        display: flex;
+
+        a {
+            &::after {
+                content: " ";
+                margin-top: 2px;
+                background: var(--primary-color);
+                display: block;
+                height: 2.5px;
+                transform-origin: right;
+                @include transform("scaleX(0)");
+                @include transition("transform var(--time-duration)");
+                transition-timing-function: var(--timing-duration);
+            }
+            &:hover {
+                &::after {
+                    transform-origin: left;
+                    @include transform("scaleX(1)");
+                }
+            }
+
+            &.--active {
+                &::after {
+                    transform-origin: left;
+                    @include transform("scaleX(1)");
+                }
+            }
+        }
+    }
+
+    &__cta {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+
+        &-lang {
+            --fz-header-lang: 1.5rem;
+            --lh-header-lang: 1;
+            --ls-header-lang: 0.15rem;
+            user-select: none;
+            position: relative;
+            height: 100%;
+            cursor: pointer;
+            background: var(--black-color);
+            @include hiddenItem(false);
+            @include transition(
+                "  opacity var(--time-duration),
+        visibility var(--time-duration)"
+            );
+
+            .current {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 4px;
+                .text {
+                    color: var(--white-color);
+                    font-family: pb;
+                    font-size: var(--fz-header-lang);
+                    line-height: var(--lh-header-lang);
+                    letter-spacing: var(--ls-header-lang);
+                    text-transform: uppercase;
+                }
+                .img {
+                    @include transform("translateY(-1px)");
+                }
+            }
+            .select__wrapper {
+                &.--scroll {
+                    background: var(--black-color);
+                }
+            }
+            .select {
+                padding-top: 20px;
+                right: 0;
+                background: transparent;
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+
+                @include transition(
+                    "opacity var(--time-duration),
+                    visibility var(--time-duration),
+                    transform var(--time-duration)"
+                );
+                transition-timing-function: var(--timing-duration);
+
+                &.--active {
+                    @include transform("translateY(0)");
+
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                &__wrapper {
+                    padding: 16px 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    background: var(--black-color);
+                }
+                .text {
+                    padding: 0 18px;
+                    color: var(--white-color);
+                    font-family: pb;
+                    @include transition("color var(--time-duration)");
+                    transition-timing-function: var(--timing-duration);
+                    font-size: var(--fz-header-lang);
+                    line-height: var(--lh-header-lang);
+                    letter-spacing: var(--ls-header-lang);
+                }
+
+                .text:hover {
+                    color: var(--primary-color);
+                }
+            }
+        }
+        &-btn {
+            padding: 0 18px;
+        }
+        .hamburgermenu {
+            --time-duration: 0.6s;
+            display: none;
+            background: transparent;
+            cursor: pointer;
+            position: relative;
+            width: 24px;
+            height: 20px;
+
+            &::after,
+            &::before {
+                content: " ";
+                position: absolute;
+                display: block;
+                width: 100%;
+                min-height: 2px;
+                max-height: 2px;
+                background: var(--white-color);
+                @include transition(
+                    "transform var(--time-duration),
+                    translate var(--time-duration)"
+                );
+                transform-origin: right;
+            }
+            &::before {
+                top: 1px;
+            }
+            &::after {
+                bottom: 1px;
+            }
+            .menu {
+                width: 24px;
+                height: 2px;
+                background: var(--white-color);
+                @include transition(
+                    "opacity var(--time-duration),
+                    visibility var(--time-duration)"
+                );
+            }
+
+            &.--close {
+                &::after,
+                &::before {
+                }
+                .menu {
+                    @include hiddenItem;
+                }
+                &::before {
+                    @include transform("rotate(-42deg)");
+                }
+                &::after {
+                    @include transform("rotate(42deg)");
+                }
+            }
+        }
+    }
+
+    @include md {
+        .header {
+            &__cta {
+                gap: 22px;
+            }
+        }
+
+        .headermenu {
+            display: none;
+        }
+        .hamburgermenu {
+            display: block;
+        }
+        &__cta {
+            .btn {
+                display: none;
+            }
+        }
+    }
+
+    .--hidden {
+        @include hiddenItem();
+    }
+
+    @include sm {
+        &__logo {
+            width: 135px;
+        }
+    }
+    @include xs {
+        &__cta {
+            &-lang {
+                --fz-header-lang: 1.2rem;
+                --ls-header-lang: 0.12rem;
+
+                .select {
+                    &__wrapper {
+                        padding: 14px 0;
+                        .text {
+                            padding: 0 17px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

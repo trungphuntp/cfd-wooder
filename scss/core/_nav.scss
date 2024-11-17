@@ -1,0 +1,66 @@
+.menumobile {
+    --time-duration: 0.4s;
+    display: flex;
+    position: fixed;
+    overflow: hidden;
+    @include hiddenItem();
+    @include transition(
+        "  opacity var(--time-duration),
+        visibility var(--time-duration)"
+    );
+    @include landscape {
+        display: block;
+        padding-bottom: 12px;
+    }
+    @include customscroll;
+    overflow-y: auto;
+    padding-top: var(--header-height);
+    z-index: 800;
+    inset: 0;
+    background: var(--black-color);
+    @include mid(true);
+
+    &__nav {
+        --fz-menu: 1.8rem;
+        --lh-menu: 1;
+        --ls-menu: 0.144rem;
+
+        text-align: center;
+        .headermenu {
+            a {
+                padding: 15px 0;
+                font-size: var(--fz-menu);
+                line-height: var(--lh-menu);
+                letter-spacing: var(--ls-menu);
+            }
+        }
+    }
+
+    a {
+        padding: 10px 0;
+    }
+
+    .btn {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin: 10px auto 0;
+        padding: 0 24px;
+        height: 36px;
+    }
+    &.--active {
+        @include hiddenItem(false);
+    }
+    @include xs {
+        &__nav {
+            .headermenu {
+                a {
+                    padding: 10px 0;
+                }
+            }
+        }
+        .btn {
+            padding: 0 17px;
+        }
+    }
+}

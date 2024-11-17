@@ -1,0 +1,18 @@
+// core mixin variable
+@import "./core/reset";
+@import "./core/mixins";
+@import "./core/variable";
+
+// layou, component, libs
+@import "./core/layouts";
+@import "./core/components";
+@import "./core/libs";
+
+// nav, header, footer
+@import "./core/header";
+@import "./core/footer";
+@import "./core/nav";
+
+// pages
+
+@import "./pages/home.scss";
