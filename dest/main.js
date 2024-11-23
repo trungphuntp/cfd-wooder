@@ -254,7 +254,7 @@ function handlePopupVideo() {
         close = document.querySelector(
             ".popupvideo .popupvideo__inner .popupvideo__inner-iframe .close"
         ),
-        opacity = document.querySelector(".popupvideo ");
+        opacity = document.querySelector(".popupvideo");
 
     videos?.forEach((video) => {
         video?.addEventListener("click", () => {
@@ -272,17 +272,16 @@ function handlePopupVideo() {
     });
     function closePopup() {
         close?.addEventListener("click", () => {
+            lenis.start();
             popup?.classList.remove("--active");
             iframePopup?.setAttribute("src", ``);
             document.body?.classList.remove("--disable-scroll");
-            lenis.start();
         });
         opacity?.addEventListener("click", (e) => {
+            lenis.start();
             popup?.classList.remove("--active");
             iframePopup?.setAttribute("src", ``);
-            opacityBg?.classList.remove("--active");
             document.body?.classList.remove("--disable-scroll");
-            lenis.start();
         });
     }
     closePopup();
